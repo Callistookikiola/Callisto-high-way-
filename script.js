@@ -1,116 +1,155 @@
-let position = 120; // car X position
+let playing = false;
 let score = 0;
 let lives = 3;
-let highScore = 0;
-let playing = false;
-let gameLoop;
 
-let coinPosition = -100;
-let obstaclePosition = -300;
+let lane = 1; // 0=left, 1=center, 2=right
+let lanes = [45,145,245];
 
-let coinX = 150;
-let obstacleX = 200;
+let car;
+let coin;
+let obstacle;
 
-// START GAME
-function startGame() {
+let coinY = -80;
+let obstacleY = -200;
 
-    if (playing) return;
+let coinLane = 1;
+let obstacleLane = 2;
 
-    playing = true;
+// Show menu after intro
+window.onload = function(){
 
-    position = 120;
-    score = 0;
-    lives = 3;
+    setTimeout(() => {
 
-    coinPosition = -100;
-    obstaclePosition = -300;
+        document.getElementById("intro").style.display="none";
+        document.getElementById("menu").style.display="flex";
 
-    document.getElementById("score").innerHTML = score;
-    document.getElementById("lives").innerHTML = lives;
-    document.getElementById("gameOver").style.display = "none";
+    },4000);
 
-    document.getElementById("car").style.left = position + "px";
-
-    gameLoop = setInterval(updateGame, 60);
 }
 
-// GAME LOOP
-function updateGame() {
+function startGame(){
 
-    coinPosition += 6;
-    obstaclePosition += 8;
+    document.getElementById("menu").style.display="none";
+    document.getElementById("game").style.display="block";
 
-    document.getElementById("coin").style.top = coinPosition + "px";
-    document.getElementById("obstacle").style.top = obstaclePosition + "px";
+    car=document.getElementById("car");
+    coin=document.getElementById("coin");
+    obstacle=document.getElementById("obstacle");
 
-    document.getElementById("coin").style.left = coinX + "px";
-    document.getElementById("obstacle").style.left = obstacleX + "px";
+    score=0;
+    lives=3;
 
-    // RESET COIN
-    if (coinPosition > 500) {
-        coinPosition = -50;
-        coinX = Math.floor(Math.random() * 200) + 50;
-        score += 10;
-        document.getElementById("score").innerHTML = score;
+    document.getElementById("score").innerHTML=score;
+    document.getElementById("lives").innerHTML=lives;
+
+    lane=1;
+    car.style.left=lanes[lane]+"px";
+
+    playing=true;
+
+    setInterval(gameLoop,40);
+
+}
+
+function gameLoop(){
+
+    if(!playing) return;
+
+    coinY+=6;
+    obstacleY+=8;
+
+    coin.style.top=coinY+"px";
+    obstacle.style.top=obstacleY+"px";
+
+    coin.style.left=lanes[coinLane]+"px";
+    obstacle.style.left=lanes[obstacleLane]+"px";
+
+    // Coin collected
+    if(coinY>420 && lane==coinLane){
+
+        score+=10;
+
+        document.getElementById("score").innerHTML=score;
+
+        coinY=-80;
+        coinLane=Math.floor(Math.random()*3);
+
     }
 
-    // RESET OBSTACLE
-    if (obstaclePosition > 500) {
-        obstaclePosition = -100;
-        obstacleX = Math.floor(Math.random() * 200) + 50;
+    if(coinY>520){
+
+        coinY=-80;
+        coinLane=Math.floor(Math.random()*3);
+
     }
 
-    // COLLISION
-    if (
-        obstaclePosition > 420 &&
-        Math.abs(position - obstacleX) < 30
-    ) {
+    // Obstacle collision
+    if(obstacleY>420 && lane==obstacleLane){
+
         lives--;
-        document.getElementById("lives").innerHTML = lives;
 
-        obstaclePosition = -300;
+        document.getElementById("lives").innerHTML=lives;
 
-        if (lives <= 0) {
-            gameOver();
+        obstacleY=-150;
+        obstacleLane=Math.floor(Math.random()*3);
+
+        if(lives<=0){
+
+            playing=false;
+
+            alert("GAME OVER");
+
         }
+
     }
+
+    if(obstacleY>520){
+
+        obstacleY=-150;
+        obstacleLane=Math.floor(Math.random()*3);
+
+    }
+
 }
 
-// GAME OVER
-function gameOver() {
+function moveLeft(){
 
-    playing = false;
-    clearInterval(gameLoop);
+    if(!playing) return;
 
-    document.getElementById("gameOver").style.display = "block";
+    if(lane>0){
 
-    if (score > highScore) {
-        highScore = score;
-        document.getElementById("highScore").innerHTML = highScore;
+        lane--;
+
+        car.style.left=lanes[lane]+"px";
+
     }
+
 }
 
-// RESTART
-function restartGame() {
-    clearInterval(gameLoop);
-    playing = false;
-    startGame();
+function moveRight(){
+
+    if(!playing) return;
+
+    if(lane<2){
+
+        lane++;
+
+        car.style.left=lanes[lane]+"px";
+
+    }
+
 }
 
-// LEFT / RIGHT CONTROLS
-document.addEventListener("keydown", (e) => {
+function jump(){
 
-    if (!playing) return;
+    if(!playing) return;
 
-    if (e.key === "ArrowLeft") {
-        position -= 20;
-        if (position < 0) position = 0;
+    car.style.bottom="100px";
+
+    setTimeout(()=>{
+
+        car.style.bottom="20px";
+
+    },300);
+
     }
-
-    if (e.key === "ArrowRight") {
-        position += 20;
-        if (position > 240) position = 240;
-    }
-
-    document.getElementById("car").style.left = position + "px";
-});
