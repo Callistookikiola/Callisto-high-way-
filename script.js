@@ -1,15 +1,50 @@
 let position = 10;
 let score = 0;
+let playing = false;
 
-function moveForward() {
-    position += 20;
+function startGame(){
 
-    if (position > 540) {
-        position = 10;
-    }
+playing = true;
 
-    document.getElementById("car").style.left = position + "px";
+position = 10;
+score = 0;
 
-    score++;
-    document.getElementById("score").textContent = score;
+document.getElementById("score").innerHTML = score;
+
+document.getElementById("car").style.left = "10px";
+
+document.getElementById("moveBtn").disabled = false;
+
+document.getElementById("gameOver").style.display = "none";
+
+}
+
+function moveForward(){
+
+if(!playing) return;
+
+position += 20;
+
+document.getElementById("car").style.left = position + "px";
+
+score++;
+
+document.getElementById("score").innerHTML = score;
+
+if(position >= 520){
+
+playing = false;
+
+document.getElementById("gameOver").style.display = "block";
+
+document.getElementById("moveBtn").disabled = true;
+
+}
+
+}
+
+function restartGame(){
+
+startGame();
+
 }
