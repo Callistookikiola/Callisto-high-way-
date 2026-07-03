@@ -8,32 +8,41 @@
 </head>
 <body>
 
-<h1>🚗 Callisto Highway v2.0</h1>
-
-<div class="stats">
-    <span>Score: <span id="score">0</span></span>
-    <span>❤️ Lives: <span id="lives">3</span></span>
-    <span>🏆 High Score: <span id="highScore">0</span></span>
+<!-- Studio Intro -->
+<div id="intro">
+    <h1>CALLISTO STUDIOS</h1>
+    <h2>Presents</h2>
 </div>
 
-<div id="road">
-    <div id="car">🚗</div>
-    <div id="coin">🪙</div>
-    <div id="obstacle">🚧</div>
+<!-- Main Menu -->
+<div id="menu" style="display:none;">
+    <h1>🚗 CALLISTO HIGHWAY</h1>
+    <p>Version 3.0</p>
+
+    <button onclick="startGame()">▶ PLAY</button>
 </div>
 
-<div class="buttons">
-    <button onclick="moveLeft()">⬅ Left</button>
-    <button onclick="startGame()">▶ Start</button>
-    <button onclick="moveRight()">Right ➡</button>
-</div>
+<!-- Game -->
+<div id="game" style="display:none;">
 
-<div class="buttons">
-    <button onclick="jump()">⬆ Jump</button>
-    <button onclick="restartGame()">🔄 Restart</button>
-</div>
+    <div id="hud">
+        Score: <span id="score">0</span>
+        ❤️ <span id="lives">3</span>
+    </div>
 
-<h2 id="gameOver">GAME OVER</h2>
+    <div id="road">
+        <div id="car"></div>
+        <div id="coin"></div>
+        <div id="obstacle"></div>
+    </div>
+
+    <div class="controls">
+        <button onclick="moveLeft()">⬅</button>
+        <button onclick="jump()">⬆</button>
+        <button onclick="moveRight()">➡</button>
+    </div>
+
+</div>
 
 <script src="script.js"></script>
 
