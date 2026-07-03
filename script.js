@@ -2,8 +2,10 @@ let position = 10;
 let score = 0;
 let playing = false;
 
-function startGame() {
+// Obstacle position
+const obstaclePosition = 300;
 
+function startGame() {
     playing = true;
     position = 10;
     score = 0;
@@ -13,7 +15,6 @@ function startGame() {
 
     document.getElementById("moveBtn").disabled = false;
     document.getElementById("gameOver").style.display = "none";
-
 }
 
 function moveForward() {
@@ -27,23 +28,14 @@ function moveForward() {
     score++;
     document.getElementById("score").innerHTML = score;
 
-    let obstacle = document.getElementById("obstacle");
-    let obstaclePosition = obstacle.offsetLeft;
-
-    if (position >= obstaclePosition - 10) {
-
+    // Hit the obstacle
+    if (position >= obstaclePosition) {
         playing = false;
-
         document.getElementById("gameOver").style.display = "block";
-
         document.getElementById("moveBtn").disabled = true;
-
     }
-
 }
 
 function restartGame() {
-
     startGame();
-
 }
