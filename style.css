@@ -46,3 +46,9 @@ button:hover{
 p{
     font-size:20px;
 }
+#obstacle{
+    position:absolute;
+    left:300px;
+    top:35px;
+    font-size:35px;
+}
