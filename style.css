@@ -36,6 +36,8 @@ h1{
     left:20px;
     top:40px;
     font-size:40px;
+    transition:left 0.1s linear;
+}
 }
 
 #coin{
