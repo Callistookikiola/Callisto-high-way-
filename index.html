@@ -14,7 +14,17 @@
 
 <p>Score: <span id="score">0</span></p>
 
-<button onclick="moveForward()">Move Forward</button>
+<button id="startBtn" onclick="startGame()">▶ Start Game</button>
+
+<button id="moveBtn" onclick="moveForward()" disabled>
+➡ Move Forward
+</button>
+
+<button onclick="restartGame()">🔄 Restart</button>
+
+<h2 id="gameOver" style="display:none;color:red;">
+GAME OVER
+</h2>
 
 <script src="script.js"></script>
 
