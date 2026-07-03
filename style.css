@@ -152,3 +152,20 @@ button{
     }
 
 }
+.tree{
+    width:20px;
+    height:50px;
+    background:#0a8f2f;
+    position:absolute;
+    border-radius:10px;
+}
+
+.left{
+    left:5px;
+    top:80px;
+}
+
+.right{
+    right:5px;
+    top:200px;
+}
