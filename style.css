@@ -86,12 +86,23 @@ button{
 #road{
     width:340px;
     height:520px;
-    background:#555;
     margin:auto;
     position:relative;
-    border-left:8px solid white;
-    border-right:8px solid white;
     overflow:hidden;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        white 0px,
+        white 40px,
+        transparent 40px,
+        transparent 80px
+    ) center/8px 80px no-repeat,
+    #444;
+
+    border-left:18px solid #2e8b57;
+    border-right:18px solid #2e8b57;
+}
 }
 
 #car{
