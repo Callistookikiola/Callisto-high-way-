@@ -8,47 +8,49 @@
 </head>
 <body>
 
-<!-- Studio Intro -->
+<!-- Intro -->
 <div id="intro">
     <h1>CALLISTO STUDIOS</h1>
-    <h2>Presents</h2>
+    <p>Presents</p>
 </div>
 
-<!-- Main Menu -->
-<div id="menu" style="display:none;">
-    <h1>🚗 CALLISTO HIGHWAY</h1>
-    <p>Version 3.0</p>
-
+<!-- Menu -->
+<div id="menu">
+    <h1>CALLISTO HIGHWAY</h1>
     <button onclick="startGame()">▶ PLAY</button>
 </div>
 
 <!-- Game -->
-<div id="game" style="display:none;">
+<div id="game">
 
     <div id="hud">
-        Score: <span id="score">0</span>
-        ❤️ <span id="lives">3</span>
+        <div>🏆 <span id="score">0</span></div>
+        <div>❤️ <span id="lives">3</span></div>
+        <button id="restartBtn" onclick="restartGame()">🔄 Restart</button>
     </div>
 
     <div id="road">
 
-    <div class="tree left"></div>
-    <div class="tree right"></div>
+        <div class="tree left"></div>
+        <div class="tree right"></div>
 
-    <div id="car"></div>
-    <div id="coin"></div>
-    <div id="obstacle"></div>
+        <div id="coin"></div>
+        <div id="obstacle"></div>
+        <div id="car"></div>
 
     </div>
-    
 
     <div class="controls">
-        <button onclick="moveLeft()">⬅</button>
-        <button onclick="jump()">⬆</button>
-        <button onclick="moveRight()">➡</button>
+        <button onclick="moveLeft()">⬅️</button>
+        <button onclick="jump()">⬆️</button>
+        <button onclick="moveRight()">➡️</button>
     </div>
 
 </div>
+
+<audio id="bgMusic" loop></audio>
+<audio id="coinSound"></audio>
+<audio id="crashSound"></audio>
 
 <script src="script.js"></script>
 
