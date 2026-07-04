@@ -1,56 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Callisto Highway</title>
+<title>Grand City Highway</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- Intro -->
-<div id="intro">
-    <h1>CALLISTO STUDIOS</h1>
-    <p>Presents</p>
-</div>
-
-<!-- Menu -->
-<div id="menu">
-    <h1>CALLISTO HIGHWAY</h1>
-    <button onclick="startGame()">▶ PLAY</button>
-</div>
-
-<!-- Game -->
 <div id="game">
 
-    <div id="hud">
-        <div>🏆 <span id="score">0</span></div>
-        <div>❤️ <span id="lives">3</span></div>
-        <button id="restartBtn" onclick="restartGame()">🔄 Restart</button>
-    </div>
+<div id="hud">
+<span>Score: <span id="score">0</span></span>
+<span>❤️ <span id="lives">3</span></span>
+</div>
 
-    <div id="road">
+<div id="road">
 
-        <div class="tree left"></div>
-        <div class="tree right"></div>
+<div id="car"></div>
 
-        <div id="coin"></div>
-        <div id="obstacle"></div>
-        <div id="car"></div>
+<div id="coin"></div>
 
-    </div>
+<div id="obstacle"></div>
 
-    <div class="controls">
-        <button onclick="moveLeft()">⬅️</button>
-        <button onclick="jump()">⬆️</button>
-        <button onclick="moveRight()">➡️</button>
-    </div>
+<div class="tree left" style="top:60px;"></div>
+<div class="tree right" style="top:180px;"></div>
+<div class="tree left" style="top:320px;"></div>
+<div class="tree right" style="top:430px;"></div>
 
 </div>
 
-<audio id="bgMusic" loop></audio>
-<audio id="coinSound"></audio>
-<audio id="crashSound"></audio>
+<div class="controls">
+<button id="leftBtn">⬅</button>
+<button id="upBtn">⬆</button>
+<button id="rightBtn">➡</button>
+</div>
+
+<button id="restartBtn">🔄 Restart Game</button>
+
+</div>
 
 <script src="script.js"></script>
 
