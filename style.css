@@ -210,3 +210,9 @@ body{
     background:url("Screenshot_20260703-210859.jpg") center/cover repeat-y;
     animation:roadMove 2s linear infinite;
         }
+.traffic{
+    position:absolute;
+    width:60px;
+    height:90px;
+    background:url("Screenshot_20260703-211048.jpg") center/contain no-repeat;
+}
