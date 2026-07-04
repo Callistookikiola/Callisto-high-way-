@@ -1,0 +1,199 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+    overflow:hidden;
+    text-align:center;
+}
+
+/* INTRO */
+
+#intro{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+#intro h1{
+    color:#00bfff;
+    font-size:42px;
+}
+
+#intro h2{
+    margin-top:10px;
+    color:white;
+}
+
+/* MENU */
+
+#menu{
+    display:none;
+    width:100%;
+    height:100vh;
+    background:#181818;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+#menu h1{
+    font-size:42px;
+}
+
+#menu p{
+    margin:15px;
+    color:#aaa;
+}
+
+#playBtn{
+    width:220px;
+    height:60px;
+    border:none;
+    border-radius:10px;
+    background:#00bfff;
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* GAME */
+
+#game{
+    display:none;
+    width:100%;
+    height:100vh;
+}
+
+#hud{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 20px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+#restartBtn{
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    background:#e53935;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+#road{
+    width:360px;
+    height:560px;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+    border-radius:10px;
+    background:#444;
+}
+
+#car{
+    position:absolute;
+    width:60px;
+    height:90px;
+    left:150px;
+    bottom:20px;
+    background:url("Screenshot_20260703-210749.jpg") center/contain no-repeat;
+}
+
+#coin{
+    position:absolute;
+    width:40px;
+    height:40px;
+    top:-60px;
+    left:160px;
+    background:url("Screenshot_20260703-210959.jpg") center/contain no-repeat;
+}
+
+#obstacle{
+    position:absolute;
+    width:55px;
+    height:55px;
+    top:-100px;
+    left:150px;
+    background:url("Screenshot_20260703-211048.jpg") center/contain no-repeat;
+}
+
+.tree{
+    position:absolute;
+    width:45px;
+    height:80px;
+    background:url("Screenshot_20260703-211428.jpg") center/contain no-repeat;
+}
+
+.left{
+    left:5px;
+}
+
+.right{
+    right:5px;
+}
+
+.tree1{top:50px;}
+.tree2{top:250px;}
+.tree3{top:120px;}
+.tree4{top:380px;}
+
+.controls{
+    position:fixed;
+    bottom:15px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.controls button{
+    width:75px;
+    height:75px;
+    border:none;
+    border-radius:50%;
+    background:#007bff;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+#gameOver{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+}
+
+#playAgainBtn{
+    margin-top:20px;
+    width:220px;
+    height:60px;
+    border:none;
+    border-radius:10px;
+    background:#28a745;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+  }
