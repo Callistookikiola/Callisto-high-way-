@@ -197,3 +197,16 @@ body{
     font-size:22px;
     cursor:pointer;
   }
+@keyframes roadMove{
+    from{
+        background-position-y:0;
+    }
+    to{
+        background-position-y:1000px;
+    }
+}
+
+#road{
+    background:url("Screenshot_20260703-210859.jpg") center/cover repeat-y;
+    animation:roadMove 2s linear infinite;
+        }
