@@ -1,0 +1,47 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Callisto Highway</title>  
+<link rel="stylesheet" href="style.css">  
+</head>  <body>  <!-- CALLISTO STUDIOS INTRO -->  <div id="intro">  <h1>CALLISTO STUDIOS</h1>  
+<h2>Presents</h2>
+
+</div>  <!-- MAIN MENU -->  <div id="menu">  <h1>🚗 CALLISTO HIGHWAY</h1>  
+
+<p>Version 3.0</p>  
+
+<button id="playBtn">  
+    ▶ PLAY  
+</button>
+
+</div>  <!-- GAME -->  <div id="game">  <div id="hud">  <div>  
+🏆 Score:  
+<span id="score">0</span>  
+</div>  <div>  
+❤️ Lives:  
+<span id="lives">3</span>  
+</div>  <button id="restartBtn">  
+🔄 Restart  
+</button>  </div>  <div id="road">  <div class="tree left tree1"></div>  
+<div class="tree left tree2"></div>  <div class="tree right tree3"></div>  
+<div class="tree right tree4"></div>  <div id="coin"></div>  <div id="obstacle"></div>  <div id="car"></div>  </div>  <div class="controls">  <button id="leftBtn">⬅️</button>
+
+<button id="jumpBtn">⬆️</button>
+
+<button id="rightBtn">➡️</button>
+
+</div>  </div>  <!-- GAME OVER -->  <div id="gameOver">  <h1>GAME OVER</h1>  <p>Your Score:  
+<span id="finalScore">0</span>  
+</p>  <button id="playAgainBtn">  
+🔄 Play Again  
+</button>  </div>  <!-- AUDIO -->  <audio id="bgMusic" src="sounds/music.mp3" loop></audio>
+
+<audio id="coinSound" src="sounds/coin.mp3"></audio>
+
+<audio id="crashSound" src="sounds/crash.mp3"></audio>
+
+<audio id="buttonSound" src="sounds/button.mp3"></audio>
+
+<script src="script.js"></script>  </body>  
+</html>
