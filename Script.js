@@ -124,3 +124,30 @@ restartBtn.onclick=function(){
 };
 
 gameLoop();
+const traffic = [
+    document.getElementById("traffic1"),
+    document.getElementById("traffic2"),
+    document.getElementById("traffic3")
+];
+
+let trafficData = [
+    {x:40,y:-100},
+    {x:150,y:-350},
+    {x:260,y:-600}
+];
+
+function updateTraffic(){
+
+    for(let i=0;i<traffic.length;i++){
+
+        trafficData[i].y += 8;
+
+        if(trafficData[i].y > 600){
+            trafficData[i].y = -200;
+            trafficData[i].x = [40,150,260][Math.floor(Math.random()*3)];
+        }
+
+        traffic[i].style.left = trafficData[i].x + "px";
+        traffic[i].style.top = trafficData[i].y + "px";
+    }
+                }
