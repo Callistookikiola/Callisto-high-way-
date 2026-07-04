@@ -89,49 +89,65 @@ button{
     margin:auto;
     position:relative;
     overflow:hidden;
-
-    background:
-    repeating-linear-gradient(
-        to bottom,
-        white 0px,
-        white 40px,
-        transparent 40px,
-        transparent 80px
-    ) center/8px 80px no-repeat,
-    #444;
-
-    border-left:18px solid #2e8b57;
-    border-right:18px solid #2e8b57;
-}
+    background-image:url("Screenshot_20260703-210859.jpg");
+    background-size:cover;
+    background-position:center;
 }
 
 #car{
-    width:45px;
-    height:70px;
-    background:red;
+    width:55px;
+    height:90px;
     position:absolute;
     left:145px;
     bottom:20px;
-    border-radius:8px;
+    background-image:url("Screenshot_20260703-210749.jpg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
 #coin{
-    width:30px;
-    height:30px;
-    background:gold;
-    border-radius:50%;
+    width:35px;
+    height:35px;
     position:absolute;
     left:150px;
     top:-40px;
+    background-image:url("Screenshot_20260703-210959.jpg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
 #obstacle{
     width:50px;
     height:50px;
-    background:black;
     position:absolute;
     left:140px;
     top:-100px;
+    background-image:url("Screenshot_20260703-211048.jpg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+.tree{
+    width:40px;
+    height:70px;
+    position:absolute;
+    background-image:url("Screenshot_20260703-211428.jpg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+.left{
+    left:5px;
+    top:80px;
+}
+
+.right{
+    right:5px;
+    top:200px;
 }
 
 .controls{
@@ -145,27 +161,8 @@ button{
 }
 
 @keyframes fadeOut{
-
     to{
         opacity:0;
         visibility:hidden;
     }
-
-}
-.tree{
-    width:20px;
-    height:50px;
-    background:#0a8f2f;
-    position:absolute;
-    border-radius:10px;
-}
-
-.left{
-    left:5px;
-    top:80px;
-}
-
-.right{
-    right:5px;
-    top:200px;
 }
