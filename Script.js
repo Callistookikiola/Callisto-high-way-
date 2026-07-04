@@ -100,7 +100,7 @@ function gameLoop(){
     }
 
     requestAnimationFrame(gameLoop);
-}
+}updateTraffic();
 
 restartBtn.onclick=function(){
 
